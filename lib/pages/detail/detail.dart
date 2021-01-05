@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:FlutterNews/support/util/date_util.dart';
-import 'package:FlutterNews/support/util/functions.dart';
+import 'package:NewsSummary/pages/summarize/summary_view.dart';
+import 'package:NewsSummary/support/util/FadeInRoute.dart';
+import 'package:NewsSummary/support/util/date_util.dart';
 import 'package:cubes/cubes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -42,7 +43,7 @@ class DetailPage extends StatelessWidget {
           borderRadius: new BorderRadius.circular(6.0),
           child: new ListView(
             children: <Widget>[
-              new Hero(tag: _title, child: _getImageNetwork(Functions.getImgResizeUrl(_img, 250, ''))),
+              new Hero(tag: _title, child: _getImageNetwork(_img)),
               _getBody(_title, _date, _description, _origin, context),
             ],
           ),
@@ -88,9 +89,24 @@ class DetailPage extends StatelessWidget {
           _getTittle(tittle),
           _getDate(date, origin),
           _getDescription(description),
+          _getSummaryButton(_link, context),
           _getAntLink(),
           _getLink(_link, context)
         ],
+      ),
+    );
+  }
+
+  Widget _getSummaryButton(link, context) {
+    return new SizedBox(
+      width: double.infinity,
+      child: new RaisedButton(
+        onPressed: () {
+          showSummary(context, link);
+        },
+        textColor: Colors.white,
+        color: Colors.blueAccent,
+        child: Text('Summarize', style: TextStyle(fontSize: 20)),
       ),
     );
   }
@@ -99,7 +115,7 @@ class DetailPage extends StatelessWidget {
     return new Container(
       margin: new EdgeInsets.only(top: 30.0),
       child: new Text(
-        "Mais detalhes acesse:",
+        "Read full article:",
         style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[600]),
       ),
     );
@@ -178,7 +194,7 @@ class DetailPage extends StatelessWidget {
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
             new FlatButton(
-              child: new Text(Cubes.getString("text_fechar")),
+              child: new Text(Cubes.getString("text_close")),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -188,4 +204,12 @@ class DetailPage extends StatelessWidget {
       },
     );
   }
+
+  void showSummary(BuildContext context, String url) {
+    Navigator.of(context).push(FadeInRoute(
+        widget: SummaryView(_link)
+    ));
+  }
+
+
 }

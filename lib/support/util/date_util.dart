@@ -1,13 +1,26 @@
 
 class DateUtil{
 
-  var mouths =['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  var months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
 
   String buildDate(String date){
 
     try{
-      var datatime = DateTime.parse(date);
-      return "${datatime.day} de ${mouths[datatime.month-1]} de ${datatime.year} às ${datatime.hour}:${datatime.minute}";
+      var datetime = DateTime.parse(date);
+      return "${datetime.day} de ${months[datetime.month-1]} de ${datetime.year} às ${datetime.hour}:${datetime.minute}";
     }catch(e){
       return "";
     }

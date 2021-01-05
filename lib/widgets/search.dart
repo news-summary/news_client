@@ -1,4 +1,4 @@
-import 'package:FlutterNews/pages/search/search_view.dart';
+import 'package:NewsSummary/pages/search/search_view.dart';
 import 'package:cubes/cubes.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +27,7 @@ class SearchWidget extends StatelessWidget {
                       Icons.search,
                       color: Theme.of(context).accentColor,
                     ),
-                    hintText: Cubes.getString("hint_busca"),
+                    hintText: Cubes.getString("hint_search"),
                     border: InputBorder.none),
                 onSubmitted: (query) => onSubmitted(query, context),
                 controller: editingController,

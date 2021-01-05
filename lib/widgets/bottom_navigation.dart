@@ -20,17 +20,17 @@ class _BottomNavigationState extends State<BottomNavigation> {
       items: [
         new BottomNavigationBarItem(
           icon: const Icon(Icons.language),
-          label: Cubes.getString("tab_recentes"),
+          label: Cubes.getString("tab_recent"),
           backgroundColor: Colors.blue,
         ),
         new BottomNavigationBarItem(
           icon: const Icon(Icons.local_library),
-          label: Cubes.getString("tab_noticias"),
+          label: Cubes.getString("tab_news"),
           backgroundColor: Colors.blue[800],
         ),
         new BottomNavigationBarItem(
           icon: const Icon(Icons.info),
-          label: Cubes.getString("tab_sobre"),
+          label: Cubes.getString("tab_about"),
           backgroundColor: Colors.blue,
         )
       ],

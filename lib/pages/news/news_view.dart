@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:FlutterNews/pages/news/news_cube.dart';
-import 'package:FlutterNews/repository/notice_repository/model/notice.dart';
-import 'package:FlutterNews/widgets/AnimatedContent.dart';
-import 'package:FlutterNews/widgets/custom_tab.dart';
-import 'package:FlutterNews/widgets/erro_conection.dart';
+import 'package:NewsSummary/pages/news/news_cube.dart';
+import 'package:NewsSummary/repository/notice_repository/model/notice.dart';
+import 'package:NewsSummary/widgets/AnimatedContent.dart';
+import 'package:NewsSummary/widgets/custom_tab.dart';
+import 'package:NewsSummary/widgets/error_connection.dart';
 import 'package:cubes/cubes.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +57,7 @@ class NewsView extends CubeWidget<NewsCube> {
   Widget _buildConnectionError(NewsCube cube) {
     return cube.errorConnection.build<bool>((value) {
       return value
-          ? ErroConection(tryAgain: () {
+          ? ErrorConnection(tryAgain: () {
               cube.load(false);
             })
           : SizedBox.shrink();
@@ -80,7 +80,7 @@ class NewsView extends CubeWidget<NewsCube> {
   Widget _getListCategory(NewsCube cube) {
     return cube.categoriesName.build<List<String>>((value) {
       return CustomTab(
-        itens: value,
+        items: value,
         tabSelected: (index) {
           cube.categoryClick(index);
         },

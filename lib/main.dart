@@ -1,5 +1,5 @@
-import 'package:FlutterNews/pages/home/home_view.dart';
-import 'package:FlutterNews/support/di/init_dependencies.dart';
+import 'package:NewsSummary/pages/home/home_view.dart';
+import 'package:NewsSummary/support/di/init_dependencies.dart';
 import 'package:cubes/cubes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +13,7 @@ class NewsApp extends StatelessWidget {
     [
       Locale('en', 'US'),
       Locale('pt', 'BR'),
+      Locale('hi', 'HI'),
     ],
     pathFiles: 'resources/lang/',
   );
@@ -26,7 +27,7 @@ class NewsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter News',
+      title: 'News Summary',
       theme: new ThemeData(
           primarySwatch: Colors.blue,
           primaryColor: Colors.blue,

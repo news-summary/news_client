@@ -1,9 +1,9 @@
-import 'package:FlutterNews/pages/featured/featured_view.dart';
-import 'package:FlutterNews/pages/home/home_cube.dart';
-import 'package:FlutterNews/pages/info/info.dart';
-import 'package:FlutterNews/pages/news/news_view.dart';
-import 'package:FlutterNews/widgets/bottom_navigation.dart';
-import 'package:FlutterNews/widgets/search.dart';
+import 'package:NewsSummary/pages/featured/featured_view.dart';
+import 'package:NewsSummary/pages/home/home_cube.dart';
+import 'package:NewsSummary/pages/info/info.dart';
+import 'package:NewsSummary/pages/news/news_view.dart';
+import 'package:NewsSummary/widgets/bottom_navigation.dart';
+import 'package:NewsSummary/widgets/search.dart';
 import 'package:cubes/cubes.dart';
 import 'package:flutter/material.dart';
 

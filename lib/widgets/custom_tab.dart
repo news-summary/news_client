@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 class CustomTab extends StatefulWidget {
 
   final Function(int) tabSelected;
-  final List<String> itens;
+  final List<String> items;
 
-  const CustomTab({Key key, this.tabSelected, this.itens}) : super(key: key);
+  const CustomTab({Key key, this.tabSelected, this.items}) : super(key: key);
 
   @override
   _CustomTabState createState() => _CustomTabState();
 }
 
 class _CustomTabState extends State<CustomTab> {
-  var category_selected = 0;
+  var categorySelected = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class _CustomTabState extends State<CustomTab> {
   Widget _getListCategory(){
 
     ListView listCategory = new ListView.builder(
-        itemCount: widget.itens.length,
+        itemCount: widget.items.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index){
           return _buildCategoryItem(index);
@@ -53,11 +53,11 @@ class _CustomTabState extends State<CustomTab> {
             margin: new EdgeInsets.only(left: 10.0),
             child: new Material(
               elevation: 2.0,
-              color: category_selected == index ? Theme.of(context).primaryColorDark : Theme.of(context).accentColor,
+              color: categorySelected == index ? Theme.of(context).primaryColorDark : Theme.of(context).accentColor,
               borderRadius: const BorderRadius.all(const Radius.circular(25.0)),
               child:  new Container(
                 padding: new EdgeInsets.only(left: 12.0,top: 7.0,bottom: 7.0,right: 12.0),
-                child: new Text(widget.itens[index],
+                child: new Text(widget.items[index],
                   style: new TextStyle(
                       color: Colors.white),
                 ),
@@ -72,10 +72,10 @@ class _CustomTabState extends State<CustomTab> {
 
   void setSelectedItem(index) {
 
-    if(index != category_selected) {
+    if(index != categorySelected) {
       widget.tabSelected(index);
       setState(() {
-        category_selected = index;
+        categorySelected = index;
       });
     }
   }

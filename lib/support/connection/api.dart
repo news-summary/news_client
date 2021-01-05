@@ -2,16 +2,16 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-//Classe responsavel por realizar conexões com API
+//Class responsible for making connections with API
 class Api{
 
   final String urlBase;
 
   Api(this.urlBase);
 
-  /// Método que executa chamada de conexão do tipo GET
+  /// Method that executes the connection call of the GET type
   /// @params uri
-  /// @params headers (opcional)
+  /// @params headers (optional)
   Future <dynamic> get(String uri, {Map<String,String> headers}) async{
 
     try{
@@ -34,10 +34,10 @@ class Api{
 
   }
 
-  /// Método que executa chamada de conexão do tipo POST
+  /// Method that executes the connection type POST
   /// @params uri
   /// @params body
-  /// @params headers (opcional)
+  /// @params headers (optional)
   Future <dynamic> post(String uri,dynamic body, {Map<String,String> headers}) async{
 
     try{
@@ -59,10 +59,10 @@ class Api{
 
   }
 
-  /// Método que executa chamada de conexão do tipo PUT
+  /// Method that executes the connection call of the PUT type
   /// @params uri
   /// @params body
-  /// @params headers (opcional)
+  /// @params headers (optional)
   Future <dynamic> put(String uri,dynamic body, {Map<String,String> headers}) async{
 
     try{
@@ -84,9 +84,9 @@ class Api{
 
   }
 
-  /// Método que executa chamada de conexão do tipo DELETE
+  /// Method that executes the connection call of the DELETE type
   /// @params uri
-  /// @params headers (opcional)
+  /// @params headers (optional)
   Future <dynamic> delete(String uri, {Map<String,String> headers}) async{
 
     try{

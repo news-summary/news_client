@@ -1,6 +1,6 @@
-import 'package:FlutterNews/repository/notice_repository/model/notice.dart';
-import 'package:FlutterNews/repository/notice_repository/notice_repository.dart';
-import 'package:FlutterNews/support/conection/api.dart';
+import 'package:NewsSummary/repository/notice_repository/model/notice.dart';
+import 'package:NewsSummary/repository/notice_repository/notice_repository.dart';
+import 'package:NewsSummary/support/connection/api.dart';
 import 'package:cubes/cubes.dart';
 
 class NewsCube extends Cube {
@@ -8,15 +8,15 @@ class NewsCube extends Cube {
 
   int _page = 0;
   int _currentCategory = 0;
-  List<String> _categories = ['geral', 'sports', 'technology', 'entertainment', 'health', 'business'];
+  List<String> _categories = ['general', 'sports', 'technology', 'entertainment', 'health', 'business'];
 
   NewsCube(this.repository) {
-    categoriesName.add(Cubes.getString("cat_geral"));
-    categoriesName.add(Cubes.getString("cat_esporte"));
-    categoriesName.add(Cubes.getString("cat_tecnologia"));
-    categoriesName.add(Cubes.getString("cat_entretenimento"));
-    categoriesName.add(Cubes.getString("cat_saude"));
-    categoriesName.add(Cubes.getString("cat_negocios"));
+    categoriesName.add(Cubes.getString("cat_general"));
+    categoriesName.add(Cubes.getString("cat_sport"));
+    categoriesName.add(Cubes.getString("cat_technology"));
+    categoriesName.add(Cubes.getString("cat_entertainment"));
+    categoriesName.add(Cubes.getString("cat_health"));
+    categoriesName.add(Cubes.getString("cat_business"));
   }
 
   final errorConnection = ObservableValue<bool>(value: false);
@@ -66,7 +66,7 @@ class NewsCube extends Cube {
 
   _showImplError(onError) {
     if (onError is FetchDataException) {
-      print("codigo: ${onError.code()}");
+      print("code: ${onError.code()}");
     }
     errorConnection.update(true);
     progress.update(false);

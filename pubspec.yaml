@@ -1,5 +1,5 @@
-name: FlutterNews
-description: A new Flutter application.
+name: NewsSummary
+description: A news summarizer
 version: 1.0.0+1
 
 dependencies:
@@ -10,6 +10,7 @@ dependencies:
   share: ^0.6.5+4
   http: ^0.12.2
   cubes: ^0.9.0
+  chewie: ^0.12.0
 
 dev_dependencies:
   flutter_test:

@@ -1,8 +1,8 @@
-import 'package:FlutterNews/pages/featured/featured_cube.dart';
-import 'package:FlutterNews/repository/notice_repository/model/notice.dart';
-import 'package:FlutterNews/widgets/erro_conection.dart';
-import 'package:FlutterNews/widgets/pageTransform/intro_page_item.dart';
-import 'package:FlutterNews/widgets/pageTransform/page_transformer.dart';
+import 'package:NewsSummary/pages/featured/featured_cube.dart';
+import 'package:NewsSummary/repository/notice_repository/model/notice.dart';
+import 'package:NewsSummary/widgets/error_connection.dart';
+import 'package:NewsSummary/widgets/pageTransform/intro_page_item.dart';
+import 'package:NewsSummary/widgets/pageTransform/page_transformer.dart';
 import 'package:cubes/cubes.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +62,7 @@ class FeaturedView extends CubeWidget<FeaturedCube> {
   Widget _buildErrorConnection(FeaturedCube cube) {
     return cube.errorConnection.build<bool>((value) {
       return value
-          ? ErroConection(tryAgain: () {
+          ? ErrorConnection(tryAgain: () {
               cube.load();
             })
           : SizedBox.shrink();

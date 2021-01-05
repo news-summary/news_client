@@ -1,6 +1,6 @@
-import 'package:FlutterNews/repository/notice_repository/model/notice.dart';
-import 'package:FlutterNews/repository/notice_repository/notice_repository.dart';
-import 'package:FlutterNews/support/conection/api.dart';
+import 'package:NewsSummary/repository/notice_repository/model/notice.dart';
+import 'package:NewsSummary/repository/notice_repository/notice_repository.dart';
+import 'package:NewsSummary/support/connection/api.dart';
 import 'package:cubes/cubes.dart';
 
 class FeaturedCube extends Cube {
@@ -32,7 +32,7 @@ class FeaturedCube extends Cube {
 
   _showImplError(onError) {
     if (onError is FetchDataException) {
-      print("codigo: ${onError.code()}");
+      print("code: ${onError.code()}");
     }
     print(onError);
     errorConnection.update(true);

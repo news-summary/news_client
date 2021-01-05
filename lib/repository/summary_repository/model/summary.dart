@@ -2,34 +2,32 @@ import 'package:NewsSummary/support/util/date_util.dart';
 import 'package:NewsSummary/pages/detail/detail.dart';
 import 'package:flutter/material.dart';
 
-class Notice extends StatelessWidget{
+class Summary extends StatelessWidget{
 
-  var img;
-  var title;
-  var date;
-  var description;
-  var category;
-  var link;
-  var origin;
+  var finalReadingTime;
+  var finalTime;
+  var summaryReadingTime;
+  var finalSummary;
 
   AnimationController animationController;
 
-  Notice(this.img, this.title, this.date, this.description, this.category, this.link, this.origin);
+  Summary(this.finalReadingTime, this.finalTime, this.summaryReadingTime, this.finalSummary);
 
-  Notice.fromMap(Map<String, dynamic>  map) :
-        img = map['urlToImage'],
-        title = map['title'],
-        date = map['publishedAt'],
-        description = map['description'],
-        category = '',
-        // category = map['category'],
-        link = map['url'],
-        origin = map['source']['name'];
-
+  Summary.fromMap(Map<String, dynamic> map):
+        finalReadingTime = map['final_reading_time'],
+        finalTime = map['final_time'],
+        summaryReadingTime = map['summary_reading_time'],
+        finalSummary = map['final_summary'];
 
   BuildContext _context;
 
   @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+
+  /*@override
   Widget build(BuildContext context) {
     this._context = context;
     return new GestureDetector(
@@ -141,6 +139,6 @@ class Notice extends StatelessWidget{
   Widget _getDateWidget(String date){
     return new Text(new DateUtil().buildDate(date),
     style: new TextStyle(color: Colors.grey,fontSize: 10.0),);
-  }
+  }*/
 
 }

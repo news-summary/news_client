@@ -1,6 +1,6 @@
-import 'package:FlutterNews/pages/datail/detail.dart';
-import 'package:FlutterNews/repository/notice_repository/model/notice.dart';
-import 'package:FlutterNews/support/util/FadeInRoute.dart';
+import 'package:NewsSummary/pages/detail/detail.dart';
+import 'package:NewsSummary/repository/notice_repository/model/notice.dart';
+import 'package:NewsSummary/support/util/FadeInRoute.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'page_transformer.dart';
@@ -131,12 +131,6 @@ class IntroNewsItem extends StatelessWidget {
 
   }
 
-  String _getImageUrl(url,height,width){
-
-    return 'http://104.131.18.84/notice/tim.php?src=$url&h=$height&w=$width';
-
-  }
-
   @override
   Widget build(BuildContext context) {
 
@@ -168,7 +162,9 @@ class IntroNewsItem extends StatelessWidget {
           child: new Stack(
             fit: StackFit.expand,
             children: [
-              new Hero(tag: item.title,child: _getImageNetwork(_getImageUrl(item.imageUrl, 400, ''))),
+              new Hero(
+                  tag: item.title,
+                  child: _getImageNetwork(item.imageUrl)),
               _getOverlayGradient(),
               _buildTextContainer(context),
             ],
